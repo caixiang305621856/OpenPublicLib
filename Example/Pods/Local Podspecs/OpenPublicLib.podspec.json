@@ -18,6 +18,13 @@
   "platforms": {
     "ios": "8.0"
   },
+  "frameworks": [
+    "UIKit",
+    "AVFoundation",
+    "Photos",
+    "UserNotifications",
+    "AssetsLibrary"
+  ],
   "subspecs": [
     {
       "name": "FoundationCategory",
