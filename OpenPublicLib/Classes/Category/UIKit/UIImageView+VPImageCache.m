@@ -9,7 +9,6 @@
 #import "UIImageView+VPImageCache.h"
 #import "UIImageView+WebCache.h"
 #import "UIImage+DrawRoundImage.h"
-#import <CommonCrypto/CommonDigest.h>
 #import "NSString+Additional.h"
 
 static NSString *const kradiusCache = @"_radiusCache";
