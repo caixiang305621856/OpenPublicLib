@@ -21,11 +21,13 @@
   "subspecs": [
     {
       "name": "FoundationCategory",
-      "source_files": "OpenPublicLib/Classes/Category/Foundation/**/*"
+      "source_files": "OpenPublicLib/Classes/Category/Foundation/**/*",
+      "public_header_files": "OpenPublicLib/Classes/Foundation/**/*.h"
     },
     {
       "name": "UIKitCategory",
       "source_files": "OpenPublicLib/Classes/Category/UIKit/**/*",
+      "public_header_files": "OpenPublicLib/Classes/UIKit/**/*.h",
       "dependencies": {
         "SDWebImage": [
           "~> 4.2.3"
@@ -35,6 +37,7 @@
     {
       "name": "Helper",
       "source_files": "OpenPublicLib/Classes/Helper/**/*",
+      "public_header_files": "OpenPublicLib/Classes/Helper/**/*.h",
       "dependencies": {
         "OpenUDID": [
 
@@ -43,11 +46,13 @@
     },
     {
       "name": "Macro",
-      "source_files": "OpenPublicLib/Classes/Macro/**/*"
+      "source_files": "OpenPublicLib/Classes/Macro/**/*",
+      "public_header_files": "OpenPublicLib/Classes/Macro/**/*.h"
     },
     {
       "name": "NetWork",
       "source_files": "OpenPublicLib/Classes/Network/**/*",
+      "public_header_files": "OpenPublicLib/Classes/Network/**/*.h",
       "dependencies": {
         "AFNetworking": [
           "~> 3.1"
