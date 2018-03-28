@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OpenPublicLib'
-  s.version          = '0.1.0'
+  s.version          = '0.1.2'
   s.summary          = '公共服务基础组件'
 
 # This description is used to generate tags and improve search results.
@@ -30,38 +30,34 @@ TODO: 公用宏，公用函数，公用类的私有组件.
 
   s.ios.deployment_target = '8.0'
 
-    # 分类相关
     s.subspec 'FoundationCategory' do |f|
     f.source_files = 'OpenPublicLib/Classes/Category/Foundation/**/*'
+    f.public_header_files = 'OpenPublicLib/Classes/Foundation/**/*.h'
     end
 
     s.subspec 'UIKitCategory' do |u|
     u.source_files = 'OpenPublicLib/Classes/Category/UIKit/**/*'
+    u.public_header_files = 'OpenPublicLib/Classes/UIKit/**/*.h'
     u.dependency 'SDWebImage', '~> 4.2.3'
     end
 
-    # 工具Helper
     s.subspec 'Helper' do |helper|
     helper.source_files = 'OpenPublicLib/Classes/Helper/**/*'
+    helper.public_header_files = 'OpenPublicLib/Classes/Helper/**/*.h'
     helper.dependency 'OpenUDID'
     end
 
-    # 全局宏
     s.subspec 'Macro' do |macro|
     macro.source_files = 'OpenPublicLib/Classes/Macro/**/*'
+    macro.public_header_files = 'OpenPublicLib/Classes/Macro/**/*.h'
     end
 
-    #网络基础组件
-    s.subspec 'NetWork' do |network|
-    network.source_files = 'OpenPublicLib/Classes/Network/**/*'
-    network.dependency 'AFNetworking', '~> 3.1'
-    network.dependency 'FMDB'
-    end
   # s.resource_bundles = {
   #   'OpenPublicLib' => ['OpenPublicLib/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
+     s.frameworks = 'UIKit','AVFoundation','Photos','UserNotifications','AssetsLibrary'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
