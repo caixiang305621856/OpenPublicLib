@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OpenPublicLib'
-  s.version          = '0.1.5'
+  s.version          = '0.1.1'
   s.summary          = '公共服务基础组件'
 
 # This description is used to generate tags and improve search results.
@@ -48,6 +48,13 @@ TODO: 公用宏，公用函数，公用类的私有组件.
     s.subspec 'UIKitCategory' do |u|
     u.source_files = 'OpenPublicLib/Classes/Category/UIKit/**/*'
     u.dependency 'SDWebImage', '~> 4.2.3'
+    end
+
+    s.subspec 'NetWork' do |n|
+    n.source_files = 'OpenBase/Classes/Network/**/*'
+    n.dependency 'AFNetworking', '~> 3.1'
+    n.dependency 'FMDB'
+    n.library = "sqlite3"
     end
 
   # s.resource_bundles = {

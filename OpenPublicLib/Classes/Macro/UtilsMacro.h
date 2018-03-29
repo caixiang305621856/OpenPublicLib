@@ -6,7 +6,6 @@
 //  Copyright © 2016年 vernepung. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import "SDWebImageCompat.h"
 #ifndef UtilsMacro_h
 #define UtilsMacro_h
 

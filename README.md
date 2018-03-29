@@ -22,7 +22,7 @@ pod 'OpenPublicLib'
 
 ## Author
 
-616704162@qq.com, caix@mail.open.cn
+蔡少, 616704162@qq.com
 
 ## License
 

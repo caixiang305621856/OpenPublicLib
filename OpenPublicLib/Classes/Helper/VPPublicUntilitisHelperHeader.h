@@ -10,7 +10,6 @@
 #define VPPublicHelper_h
 #import "Helper.h"
 #import "Helper+Device.h"
-#import "Helper+UIView.h"
 #import "Helper+Validate.h"
 #import "Helper+Permission.h"
 
