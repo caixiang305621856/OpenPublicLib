@@ -17,20 +17,20 @@ PODS:
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
-  - OpenPublicLib (0.1.1):
-    - OpenPublicLib/FoundationCategory (= 0.1.1)
-    - OpenPublicLib/Helper (= 0.1.1)
-    - OpenPublicLib/Macro (= 0.1.1)
-    - OpenPublicLib/NetWork (= 0.1.1)
-    - OpenPublicLib/UIKitCategory (= 0.1.1)
-  - OpenPublicLib/FoundationCategory (0.1.1)
-  - OpenPublicLib/Helper (0.1.1):
+  - OpenPublicLib (0.1.2):
+    - OpenPublicLib/FoundationCategory (= 0.1.2)
+    - OpenPublicLib/Helper (= 0.1.2)
+    - OpenPublicLib/Macro (= 0.1.2)
+    - OpenPublicLib/NetWork (= 0.1.2)
+    - OpenPublicLib/UIKitCategory (= 0.1.2)
+  - OpenPublicLib/FoundationCategory (0.1.2)
+  - OpenPublicLib/Helper (0.1.2):
     - OpenUDID
-  - OpenPublicLib/Macro (0.1.1)
-  - OpenPublicLib/NetWork (0.1.1):
+  - OpenPublicLib/Macro (0.1.2)
+  - OpenPublicLib/NetWork (0.1.2):
     - AFNetworking (~> 3.1)
     - FMDB
-  - OpenPublicLib/UIKitCategory (0.1.1):
+  - OpenPublicLib/UIKitCategory (0.1.2):
     - SDWebImage (~> 4.2.3)
   - OpenUDID (1.0.0)
   - SDWebImage (4.2.3):
@@ -47,7 +47,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
-  OpenPublicLib: e42e10c0dbb916013adc36e0a39c95c5cd992491
+  OpenPublicLib: aa3dceb4eca997322b7112b29523fd19ef080728
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
 
