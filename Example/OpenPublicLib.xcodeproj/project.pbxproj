@@ -66,7 +66,7 @@
 		780BFF27CE13B869E5AB7E09 /* Pods-OpenPublicLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenPublicLib_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenPublicLib_Tests/Pods-OpenPublicLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		86A2826D6D77A16453550C94 /* Pods-OpenPublicLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenPublicLib_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenPublicLib_Example/Pods-OpenPublicLib_Example.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		ABAA82C172C09CE82BBCB422 /* OpenPublicLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = OpenPublicLib.podspec; path = ../OpenPublicLib.podspec; sourceTree = "<group>"; };
+		ABAA82C172C09CE82BBCB422 /* OpenPublicLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = OpenPublicLib.podspec; path = ../OpenPublicLib.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
