@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VPBaseRequest.h"
 @class AFHTTPRequestSerializer;
 @class AFHTTPResponseSerializer;
 @class AFSecurityPolicy;
@@ -16,28 +15,27 @@
  @note  根据需求不同，需要子类化此类，覆写相关方法。首先必须覆写baseURL（返回服务器地址），其次需要在新建的Helper类中的+(void)load方法中通过+ (void)registerHelper:(Class)helper方法进行注册
  */
 @interface VPNetConfig : NSObject
-+ (instancetype)new NS_UNAVAILABLE;
-- (instancetype)init NS_UNAVAILABLE;
+
 /**
  *@brief 注册helper类
  */
 + (void)registerConfig:(Class)config;
+
 /**
  *@brief 返回注册的对象
  */
 + (instancetype)defaultConfig;
-/**
- 使用log的模式
- */
-@property (nonatomic, assign) VPRequestLogMode logMode;
+
 /**
  *@brief 服务器的地址，默认为空，必须覆写此方法
  */
 - (NSString *)requestBaseUrl;
+
 /**
  *@brief 请求成功返回码，默认为10000，根据需求覆写此方法
  */
 - (NSInteger)requestSuccessCode;
+
 /**
  *@brief 服务器返回一个状态码，标明客户端登录失效，默认-1
  */
@@ -46,24 +44,20 @@
  *@brief 服务器返回一个状态码，标明客户端系统维护，默认99999
  */
 - (NSInteger)requestNeedMaintenanceCode;
-/**
- 当服务器踢出用户后触发
- */
+
 - (void)whenServerLogout;
-/**
- 当服务器启用维护状态时候触发
- 
- @param dict 描述信息
- */
+
 - (void)whenServerMaintenance:(NSMutableDictionary *)dict;
 /**
  *@brief 取返回码的key值，默认为"code"
  */
 - (NSString *)requestCodeKey;
+
 /**
  *@brief 服务器返回一个状态码，标明客户端取缓存数据，默认9999
  */
 - (NSInteger)requestCacheCode;
+
 /**
  *@brief 若要获取特殊的key的值,需要传入的keys.
          只获取根部的值,一般用来更新本地的时间/token.
@@ -77,12 +71,16 @@
  https请求证书
  */
 - (AFSecurityPolicy *)securityPolicy;
+
+
 /**
  @brief 组装最终传递给AF的参数字典，默认是一些公共的参数放在同一个字典当中
  @param parametersDic 每个Request的请求参数
  @return 返回最终传给AF的请求参数
  */
 - (NSMutableDictionary *)requestParameters:(NSDictionary *)parametersDic;
+
+#pragma mark -
 /**
  @brief   对请求的body进行处理，若是需要加密，子类请覆写此方法。默认不加密，直接返回bodyDic；若是需加密，则返回一个加密后的NSData类型数据
  @param   request 当前的请求，扩展可用

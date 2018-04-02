@@ -1,6 +1,6 @@
 {
   "name": "OpenPublicLib",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "summary": "公共服务基础组件",
   "description": "TODO: 公用宏，公用函数，公用类的私有组件.",
   "homepage": "https://gitee.com/caixiang19901217/OpenPublicLib",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://gitee.com/caixiang19901217/OpenPublicLib.git",
-    "tag": "0.1.2"
+    "tag": "0.1.3"
   },
   "platforms": {
     "ios": "8.0"

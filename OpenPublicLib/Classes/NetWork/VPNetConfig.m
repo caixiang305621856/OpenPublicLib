@@ -7,6 +7,7 @@
 //
 
 #import "VPNetConfig.h"
+#import "VPBaseRequest.h"
 #import "VPHTTPSessionManager.h"
 #import "VPJSONRequestSerializer.h"
 #import "VPJSONResponseSerializer.h"
@@ -21,71 +22,63 @@
 //NSString * const RequestCodeKey = @"code";
 
 static VPNetConfig *_sharedInstance = nil;
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wincomplete-implementation"
 @implementation VPNetConfig
-#pragma clang diagnostic pop
 
-+ (void)registerConfig:(Class)config {
-    if (![config isSubclassOfClass:[self class]]) {
-        @throw [NSException exceptionWithName:@"registerConfig" reason:@"注册的请求帮助类不是继承与VPNetConfig" userInfo:nil];
-    }
++ (void)registerConfig:(Class)config{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedInstance = [[config alloc] init];
-    });
-}
-
-+ (instancetype)defaultConfig {
-    return _sharedInstance;
-}
-
-+ (instancetype)allocWithZone:(struct _NSZone *)zone {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+        Class superClass = [config superclass];
+        Class defaultClass = [VPNetConfig class];
         //注册的类必须是NetworkHelper的子类
-        _sharedInstance = [super allocWithZone:zone];
+        if(superClass == defaultClass){
+            _sharedInstance = [[config alloc] init];
+        }
+        else{
+            @throw [NSException exceptionWithName:@"registerConfig" reason:@"注册的请求帮助类不是继承与VPNetConfig" userInfo:nil];
+        }
     });
+}
+
++ (instancetype)defaultConfig{
     return _sharedInstance;
 }
 
-- (AFHTTPRequestSerializer *)requestSerializer {
+- (AFHTTPRequestSerializer *)requestSerializer{
     return nil;
 }
 
-- (AFHTTPResponseSerializer *)responseSerializer {
+- (AFHTTPResponseSerializer *)responseSerializer{
     VPJSONResponseSerializer *serializer = [VPJSONResponseSerializer serializer];
     serializer.removesKeysWithNullValues = YES;
     return serializer;
 }
 
-- (NSString *)requestBaseUrl {
+- (NSString *)requestBaseUrl{
     //抛出异常
     @throw [NSException exceptionWithName:@"registerRequestHelper: error" reason:@"请重写[RequestHelper requestBaseUrl];" userInfo:nil];
     //    return @"127.0.0.1";
 }
 
-- (NSInteger)requestSuccessCode {
+- (NSInteger)requestSuccessCode{
     return 10000;
 }
 
-- (NSString *)requestCodeKey {
+- (NSString *)requestCodeKey{
     return @"serverCode";
 }
 
-- (NSInteger)requestNeedLoginCode {
+- (NSInteger)requestNeedLoginCode{
     return -1;
 }
 
 - (NSInteger)requestNeedMaintenanceCode {
     return 99999;
 }
-
-- (AFSecurityPolicy *)securityPolicy {
+- (AFSecurityPolicy *)securityPolicy{
     return [AFSecurityPolicy defaultPolicy];
 }
 
-- (NSInteger)requestCacheCode {
+- (NSInteger)requestCacheCode{
     return 9999;
 }
 
@@ -93,39 +86,49 @@ static VPNetConfig *_sharedInstance = nil;
     return nil;
 }
 
-- (void)whenServerLogout { }
-
-- (void)whenServerMaintenance:(NSMutableDictionary *)dict { }
-
-/** 请求的公共参数 */
-- (NSMutableDictionary *)requestParameters:(NSDictionary *)parametersDic {
-    return [NSMutableDictionary dictionaryWithDictionary:parametersDic];
-}
-
-- (id)handleOnRequest:(NSURLRequest *)request parameters:(NSDictionary *)parameters {
-    return nil;
-}
-
-- (id)handleOnResponse:(NSURLResponse *)response data:(NSData *)responseData {
-    return responseData;
-}
-
-- (void)cacheRequestWithMethodName:(NSString *)methodName params:(NSDictionary *)params result:(id)result {
+- (void)whenServerLogout{
     
 }
 
-- (id)getCacheWithMethodName:(NSString *)methodName params:(NSDictionary *)params {
+- (void)whenServerMaintenance:(NSMutableDictionary *)dict{
+    
+}
+#pragma mark -
+/** 请求的公共参数 */
+- (NSMutableDictionary *)requestCommonParam:(NSDictionary *)parametersDic{
+    return parametersDic ?[NSMutableDictionary dictionaryWithDictionary:parametersDic]: [NSMutableDictionary dictionary];
+}
+
+- (NSMutableDictionary *)requestParameters:(NSDictionary *)parametersDic{
+    return [NSMutableDictionary dictionaryWithDictionary:[self requestCommonParam:parametersDic]];
+}
+
+#pragma mark -
+- (id)handleOnRequest:(NSURLRequest *)request parameters:(NSDictionary *)parameters{
     return nil;
 }
 
-- (void(^)(NSDictionary* response))requestBusinessFailureBlock {
+- (id)handleOnResponse:(NSURLResponse *)response data:(NSData *)responseData{
+    return responseData;
+}
+
+- (void)cacheRequestWithMethodName:(NSString *)methodName params:(NSDictionary *)params result:(id)result{
+    
+}
+
+- (id)getCacheWithMethodName:(NSString *)methodName params:(NSDictionary *)params{
+    return nil;
+}
+#pragma mark - 请求回调Blcok
+- (void(^)(NSDictionary* response))requestBusinessFailureBlock{
     return nil;
 }
 
-- (void(^)(NSError *error))requestFailFinishBlock {
+- (void(^)(NSError *error))requestFailFinishBlock{
     return nil;
 }
 
+#pragma mark -
 - (NSDictionary *)requestHttpHeader{
     return @{
              @"Content-Type":@"application/x-www-form-urlencoded;charset=utf-8",

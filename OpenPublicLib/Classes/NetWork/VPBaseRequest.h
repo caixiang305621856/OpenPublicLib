@@ -9,26 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "AFURLRequestSerialization.h"
-
-/**
- log模式
-
- - VPRequestLogModeAuto: 自动(全部)
- - VPRequestLogModeNone: 不输出log
- - VPRequestLogModeWithoutResponse: 输出除了response
- */
-typedef NS_ENUM(NSInteger,VPRequestLogMode) {
-    VPRequestLogModeAuto = 0,
-    VPRequestLogModeWithoutResponse = 1,
-    VPRequestLogModeNone = 2,
-};
-
 typedef NS_ENUM(NSInteger,RequestErrorType){
     RequestErrorTypeNone=0,
     RequestErrorTypeBussines=1,
     RequestErrorTypeNetwork=2
 };
-
 typedef NS_ENUM(NSInteger,RequestMethod){
     RequestMethodGet=0,
     RequestMethodPost=1,
@@ -61,12 +46,7 @@ typedef NS_ENUM(NSInteger,RequestCacheMode) {
 /**
  *  是否DES加密
  */
-@property (nonatomic, assign) BOOL isDES NS_DEPRECATED_IOS(2_0, 7_0, "暂不支持使用");
-
-/**
- 使用log的模式
- */
-@property (nonatomic, assign) VPRequestLogMode logMode;
+@property (nonatomic, assign) BOOL isDES;
 /**
  是否是缓存返回
  */
@@ -130,15 +110,15 @@ typedef NS_ENUM(NSInteger,RequestCacheMode) {
  * @note  可以访问self.result得到服务器返回的结果，一定是NSDictionary类型。
  * @note  对网络请求的数据结果进行封装(可选) 子类实现
  */
-- (id)processResultWithDic:(NSMutableDictionary*)resultDic;
+-(id)processResultWithDic:(NSMutableDictionary*)resultDic;
 
 /** 本地链接，此处用来作为本地搭服务器测试用 */
-- (NSString *)getLocalURL NS_DEPRECATED_IOS(2_0, 7_0, "暂不支持使用");
+- (NSString *)getLocalURL;
 
 /*
  *@brief 请使用此方法取消网络请求
  */
-+ (void)cancelRequest;
++(void)cancelRequest;
 
 /**
  *  取消网络请求
@@ -150,13 +130,13 @@ typedef NS_ENUM(NSInteger,RequestCacheMode) {
  *  @note 否则返回为空字符串. @""
  *  @note 不允许子类实现
  */
-+ (NSString*)getUrlName;
++(NSString*)getUrlName;
 
 /**
  *  @brief 此方法可以根据传入的urlArray判断是否http已经完成
  *  @note  don't OVERRIDE this method
  */
-+ (BOOL)isHttpQueueFinished:(NSArray*)httpUrlArray;
++(BOOL)isHttpQueueFinished:(NSArray*)httpUrlArray;
 
 /**
  *  @brief 此方法可以根据传入的class类名判断是否http已经完成
@@ -166,7 +146,7 @@ typedef NS_ENUM(NSInteger,RequestCacheMode) {
  @"LSGoodsListRequest", @"LSCinemaListRequest"];
  BOOL isFinished = [LSBaseRequest isHttpQueueFinishedWithClassNameArray:classNameArray];
  */
-+ (BOOL)isHttpQueueFinishedWithClassNameArray:(NSArray*)requestClassArray;
++(BOOL)isHttpQueueFinishedWithClassNameArray:(NSArray*)requestClassArray;
 
 
 @end

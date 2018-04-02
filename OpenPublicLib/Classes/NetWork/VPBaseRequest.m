@@ -32,16 +32,11 @@
     NSMutableDictionary *_parametersDic;
     BOOL                _isResetBlock;//是否进行复位block
     BOOL                _isFailBlockFinish; //failBlock调取完成
+    NSInteger           _internalRet;//内部使用的ret
     NSInteger           _numOfRepeat; //重复请求次数
     RequestMethod       _requestMethod; //请求方式
     NSString            *_methodName; //请求的方法名
     NSURLSessionDataTask *_currentTask;
-#if DEBUG
-    NSTimeInterval      _timeInterval; // 请求消耗时间
-    NSTimeInterval      _responseSerializerTimeInterval; // 序列化消耗时间
-    NSInteger           _hitCache;
-    NSInteger           _code;
-#endif
 }
 @end
 
@@ -51,7 +46,7 @@
     [self cancel];
 }
 
-- (id)init{
+-(id)init{
     return [self initPostMethod:nil];
 }
 
@@ -78,7 +73,6 @@
 - (id)initMethodName:(NSString *)methodName numOfRepeat:(NSInteger)numOfRepeat requestMethod:(RequestMethod)requestMethod{
     self = [super init];
     if(self){
-        _hitCache = -1;
         _requestMethod = requestMethod;
         _numOfRepeat = numOfRepeat;
         _parametersDic = [[NSMutableDictionary alloc] init];
@@ -150,7 +144,6 @@
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             id data = [[VPNetConfig defaultConfig] getCacheWithMethodName:_methodName params:[_parametersDic copy]];
             if (data){
-                _hitCache = 1;
                 _cacheCallback = YES;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (_requestSuccFinishBlock){
@@ -169,9 +162,6 @@
 }
 
 - (void)execuRequest {
-#if DEBUG
-    _timeInterval = [NSDate date].timeIntervalSince1970;
-#endif
     dispatch_async([VPHTTPSessionManager shareManager].workQueue, ^{
         if (_requestMethod == RequestMethodGet) {
             [self doGetRequest];
@@ -281,11 +271,6 @@
     NSInteger needLoginCode = [config requestNeedLoginCode];
     NSInteger needMaintenanceCode = [config requestNeedMaintenanceCode];
     NSInteger code = [resultDic[codeKey] integerValue];
-#ifdef DEBUG
-    _code = code;
-    _timeInterval = [NSDate date].timeIntervalSince1970 - _timeInterval;
-    [self printfLogResponse:resultDic errMsg:nil];
-#endif
     
     if ([config respondsToSelector:@selector(setSpecialValues:)]) {
         NSMutableDictionary *specDict = [[NSMutableDictionary alloc]init];
@@ -302,7 +287,7 @@
     // async
     if(code == successCode){
 #ifdef DEBUG
-        _responseSerializerTimeInterval = [NSDate date].timeIntervalSince1970;
+        VPLog(@"\r\n-------------请求URL---------------\r\n %@ \r\n-------------请求参数---------------\r\n %@\r\n-------------Server返回内容---------\r\n%@--------------END----------------",_methodName, [_parametersDic copy],resultDic);
 #endif
         [self handleSuccessBlockWithDic:[self processResultWithDic:resultDic]];
     }else if(code == needLoginCode){
@@ -310,6 +295,9 @@
             [task cancel];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
+#ifdef DEBUG
+            VPLog(@"\r\n-------------请求URL---------------\r\n %@ \r\n-------------请求参数---------------\r\n %@\r\n-------------当前用户被踢出--------------END----------------",_methodName, [_parametersDic copy]);
+#endif
             [config whenServerLogout];
         });
     }else if(code == needMaintenanceCode){
@@ -317,12 +305,18 @@
             [task cancel];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
+#ifdef DEBUG
+            VPLog(@"\r\n-------------请求URL---------------\r\n %@ \r\n-------------请求参数---------------\r\n %@\r\n-------------当前系统维护--------------END----------------",_methodName, [_parametersDic copy]);
+#endif
             [config whenServerMaintenance:resultDic];
         });
     }else{
         dispatch_async(dispatch_get_main_queue(), ^{
             if (_requestBusinessFailureBlock) {
                 _errorType = RequestErrorTypeBussines;
+#ifdef DEBUG
+                VPLog(@"\r\n-------------请求URL---------------\r\n %@ \r\n-------------请求参数---------------\r\n %@\r\n-------------请求逻辑异常---------------\r\n %@--------------END----------------",_methodName, [_parametersDic copy], resultDic);
+#endif
                 _requestBusinessFailureBlock(resultDic);
             }else if (_requestFailFinishBlock) {
                 _errorType = RequestErrorTypeNetwork;
@@ -334,10 +328,6 @@
 }
 
 -(void)handleSuccessBlockWithDic:(id)dic{
-#ifdef DEBUG
-    _responseSerializerTimeInterval = [NSDate date].timeIntervalSince1970 - _responseSerializerTimeInterval;
-    [self printfLogResponse:dic errMsg:nil];
-#endif
     _cacheCallback = NO;
     if (_cacheMode != RequestCacheNone && _requestSuccFinishBlock){
         dispatch_async(dispatch_get_global_queue(0, 0),^{
@@ -363,7 +353,7 @@
 //网络返回错误后的处理
 -(void)handlerErrorResponse:(NSError*)error{
 #ifdef DEBUG
-    [self printfLogResponse:nil errMsg:error.userInfo];
+    VPLog(@"\r\n-------------请求URL---------------\r\n %@ \r\n-------------请求参数---------------\r\n %@\r\n-------------请求Error---------------\r\n %@--------------END----------------",_methodName, [_parametersDic copy], error);
 #endif
     //取消请求，不调回block
     if (kCFURLErrorCancelled == error.code) {
@@ -374,7 +364,6 @@
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             id data = [[VPNetConfig defaultConfig] getCacheWithMethodName:_methodName params:[_parametersDic copy]];
             if (data){
-                _hitCache = 1;
                 _cacheCallback = YES;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (_requestSuccFinishBlock){
@@ -408,6 +397,7 @@
     });
 }
 
+#pragma mark -
 -(void)resetFinishBlock{
     _requestSuccFinishBlock = nil;
     _requestFailFinishBlock = nil;
@@ -420,11 +410,12 @@
     return resultDic;
 }
 
-- (NSString *)getLocalURL {
+- (NSString *)getLocalURL
+{
     return nil;
 }
 
-+ (void)cancelRequest {
++ (void)cancelRequest{
     __weak VPHTTPSessionManager *weakSessionManager = [VPHTTPSessionManager shareManager];
     NSString *urlString = [self getUrlName];
     //    dispatch_async([VPHTTPSessionManager shareManager].workQueue, ^{
@@ -436,7 +427,7 @@
     //    });
 }
 
-- (void)cancel {
+- (void)cancel{
     if (_currentTask)
     {
         [_currentTask cancel];
@@ -515,68 +506,4 @@
         return nil;
     }
 }
-#ifdef DEBUG
-- (void)printfLogResponse:(NSDictionary *)resultDic errMsg:(NSString *)errMsg {
-    /*
-     \n\n\nURL:%@\n
-     Params:\n
-     %@\n
-     -Response:\n
-     %@\n
-     -ServerDurtion:%@ms\n
-     -ResponseSerializer:%@ms\n
-     -Status:%zd\n
-     -HitCache:%d\n
-     -Error:%@\n
-     \n\n\n
-     */
-    
-    VPRequestLogMode mode = (self.logMode != [VPNetConfig defaultConfig].logMode && self.logMode != VPRequestLogModeAuto) ? self.logMode : [VPNetConfig defaultConfig].logMode;
-    if (mode == VPRequestLogModeNone) {
-        return;
-    }
-    NSMutableString *string = [NSMutableString stringWithString:@"\n\n\n-------------------Start-------------------\n"];
-    [string appendFormat:@"-URL:%@\n",[NSURL URLWithString:_methodName relativeToURL:[NSURL URLWithString:[VPNetConfig defaultConfig].requestBaseUrl]].absoluteString];
-    if (_parametersDic && _parametersDic.count > 0) {
-        [string appendString:@"-------------------Params:\n"];
-        [string appendFormat:@"%@\n",[_httpBodyDic copy]];
-    }
-    [string appendFormat:@"-ServerDurtion:%fs\n",_timeInterval];
-    if (_responseSerializerTimeInterval > 0.0f) {
-        [string appendFormat:@"-ResponseSerializer:%fs\n",_responseSerializerTimeInterval];
-    }
-    if (_code > 0) {
-        NSString *codeStr = @"正常";
-        if (_code == [VPNetConfig defaultConfig].requestNeedLoginCode) {
-            codeStr = @"用户被踢出";
-        }else if (_code == [VPNetConfig defaultConfig].requestNeedMaintenanceCode) {
-            codeStr = @"服务器进入维护状态";
-        }else if (_code == [VPNetConfig defaultConfig].requestNeedMaintenanceCode) {
-            codeStr = @"服务器业务逻辑异常";
-        }
-        [string appendFormat:@"-Status:%@(%zd)\n",codeStr,_code];
-    }
-    
-    [string appendFormat:@"-HitCache:%d\n",_hitCache ? @"命中":@"未命中"];
-    
-    if (_cacheMode == RequestCacheNone){
-        [string appendFormat:@"-CacheMode:不使用缓存(RequestCacheNone)\n",_cacheMode];
-    }else if (_cacheMode == RequestCacheBeforeSend){
-        [string appendFormat:@"-CacheMode:发送前使用缓存(RequestCacheBeforeSend)\n",_cacheMode];
-    }else if (_cacheMode == RequestCacheFailed){
-        [string appendFormat:@"-CacheMode:请求失败时使用缓存(RequestCacheFailed)\n",_cacheMode];
-    }
-    if (!errMsg || errMsg.length <= 0) {
-        errMsg = @"无错误";
-    }
-    [string appendFormat:@"-Error:%@\n",errMsg];
-    if (mode != VPRequestLogModeWithoutResponse && resultDic) {
-        // 返回放在最后,方便查看
-        [string appendString:@"-------------------Response:\n"];
-        [string appendFormat:@"%@\n",[resultDic copy]];
-    }
-    [string appendString:@"---------------------End---------------------\n\n\n"];
-    VPLog(@"%@",[string copy]);
-}
-#endif
 @end
