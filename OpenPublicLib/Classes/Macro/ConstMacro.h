@@ -23,8 +23,6 @@ UIKIT_STATIC_INLINE UIEdgeInsets vp_viewSafeArea(UIView *view) {
 #endif
     return UIEdgeInsetsZero;
 }
-
-UIKIT_EXTERN const NSInteger kShowTipsOfNotification;
 /**
  *  分页条数
  */

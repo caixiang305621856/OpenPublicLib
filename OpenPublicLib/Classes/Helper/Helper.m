@@ -300,7 +300,7 @@ static NSDateFormatter *dateFormatter;
     NSDateFormatter *dateFormatter = [self dateFormatter];
     dateFormatter.dateFormat = kDefaultDateFormatterStr;
     NSDate *date = [dateFormatter dateFromString:dateString];
-    return [Helper formatDateWithDate:date format:formatStr];
+    return [Helper formateDate:date withFormatStr:formatStr];
 }
 
 + (NSDate *)dateValueWithString:(NSString *)dateStr ByFormatter:(NSString *)formatter {
@@ -374,7 +374,7 @@ static NSDateFormatter *dateFormatter;
 
 + (NSString *)dateStringWithTimeInterval:(NSTimeInterval)interval withFormatStr:(NSString *)formatStr {
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
-    return [self formatDateWithDate:date format:formatStr];
+    return [self formateDate:date withFormatStr:formatStr];
 }
 
 + (NSDate *)dateFromTimeInterval:(NSTimeInterval)timeInterval withFormatter:(NSString *)formatter{
@@ -394,7 +394,7 @@ static NSDateFormatter *dateFormatter;
         return [NSDate date];
     }
     NSDateFormatter *inputFormatter = [self dateFormatter];
-    NSString *timeString = [Helper formatTimeInterval:interval format:formatStr];
+    NSString *timeString = [Helper dateStringWithTimeInterval:interval withFormatStr:formatStr];
     return [inputFormatter dateFromString:[timeString copy]];
 }
 

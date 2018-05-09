@@ -6,7 +6,9 @@
 //
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
 UIKIT_EXTERN NSString *const kDefaultDateFormatterStr;
+
 @interface Helper : NSObject
 #pragma mark - 一些常用的公共方法
 /**
@@ -22,20 +24,24 @@ UIKIT_EXTERN NSString *const kDefaultDateFormatterStr;
  @return AttributedString
  */
 + (NSMutableAttributedString *)setNSStringCorlor:(NSString *)content positon:(NSDictionary*)positionDict withColor:(UIColor*)color;
+
 /**
  *@brief 同步日历
  */
 + (void)synchronizedToCalendarTitle:(NSString *)title location:(NSString *)location;
+
 /**
  *    @brief    将json数据转换成NSDictionary
  *    @param jsonData 数据
  *    @return     NSDictionary类型的数据
  */
 + (NSDictionary*)parserJsonData:(NSData *)jsonData;
+
 /**
  *@brief 将对象转化为json字符串
  */
 + (NSString *)jsonStringFromObject:(id)object;
+
 #pragma mark - 文件系统的操作方法
 + (NSArray<NSString *> *)getAllBundleFilesWithExt:(NSString *)ext;
 /** 创建文件夹 */
@@ -172,4 +178,5 @@ UIKIT_EXTERN NSString *const kDefaultDateFormatterStr;
  *@brief 去掉小数点后面多余的0并且只保留两位小数
  */
 +(NSString *)trimright0:(double )param;
+
 @end

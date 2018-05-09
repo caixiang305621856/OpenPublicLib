@@ -47,6 +47,10 @@ static VPNetConfig *_sharedInstance = nil;
     return nil;
 }
 
+- (void)setSpecialValues:(NSDictionary<NSString*,id> *)values {
+    
+}
+
 - (AFHTTPResponseSerializer *)responseSerializer{
     VPJSONResponseSerializer *serializer = [VPJSONResponseSerializer serializer];
     serializer.removesKeysWithNullValues = YES;

@@ -9,7 +9,6 @@
 #import "ConstMacro.h"
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-const NSInteger kShowTipsOfNotification = 15;
 const NSInteger kRequestPageCount = 20;
 const CGFloat kTabBarHeight = 49;
 

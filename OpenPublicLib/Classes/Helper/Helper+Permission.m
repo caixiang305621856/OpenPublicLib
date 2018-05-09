@@ -17,11 +17,11 @@
 @implementation Helper (Permission)
 
 + (void)checkingNotificationPermisssionWithCompleteBlock:(void(^)(BOOL result))complete {
-    if ([appVersion() floatValue] >= 10.0) {
+    if (@available(iOS 10.0, *)) {
         [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings *settings) {
             ExecBlock(complete, settings.authorizationStatus == UNAuthorizationStatusAuthorized);
         }];
-    }else{ //if([appVersion() floatValue] >= 8.0)
+    } else{
         ExecBlock(complete, [[UIApplication sharedApplication] currentUserNotificationSettings].types != UIUserNotificationTypeNone);
     }
 }

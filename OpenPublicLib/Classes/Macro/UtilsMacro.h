@@ -10,8 +10,6 @@
 #define UtilsMacro_h
 
 #define isBeta (BETA==1)
-#define isMgr (MGR==1)
-#define isStu (STU==1)
 
 #pragma mark - 颜色相关
 #define RGB(r, g, b) [UIColor colorWithRed:(float)r/255.0f green:(float)g/255.0f blue:(float)b/255.0f alpha:1.0f]
@@ -30,7 +28,7 @@
 #define kMainBoundsWidth    ([UIScreen mainScreen].bounds).size.width //屏幕的宽度
 
 #pragma mark - 格式字符串简写
-#define kRect(x, y, w, h)                   CGRectMake(x, y, w,            h)
+#define kRect(x, y, w, h)                   CGRectMake(x, y, w, h)
 #define kSize(w, h)                         CGSizeMake(w,  h)
 #define kPoint(x, y)                        CGPointMake(x, y)
 
@@ -39,6 +37,31 @@
 
 #pragma mark - 系统版本号
 #define iOSVersion [[[UIDevice currentDevice] systemVersion] floatValue]
+
+#pragma mark - 实现一个单利
+// @interface
+#define singleton_interface(className) \
++ (className *)shared##className;
+
+// @implementation
+#define singleton_implementation(className) \
+static className *_instance; \
++ (id)allocWithZone:(NSZone *)zone \
+{ \
+static dispatch_once_t onceToken; \
+dispatch_once(&onceToken, ^{ \
+_instance = [super allocWithZone:zone]; \
+}); \
+return _instance; \
+} \
++ (className *)shared##className \
+{ \
+static dispatch_once_t onceToken; \
+dispatch_once(&onceToken, ^{ \
+_instance = [[self alloc] init]; \
+}); \
+return _instance; \
+}
 
 #ifdef DEBUG
 #   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
@@ -61,7 +84,6 @@ __weak __typeof(&*VAR) __weak##VAR = VAR;
 ext_keywordify \
 __strong __typeof(&*VAR) VAR = __weak##VAR;
 
-
 #define dispatch_global_async(block)\
 dispatch_async(dispatch_get_global_queue(0, 0),block);\
 
@@ -70,19 +92,29 @@ dispatch_sync(dispatch_get_global_queue(0, 0),block);\
 
 #define ExecBlock(block, ...) if (block) { block(__VA_ARGS__); };
 #endif /* UtilsMacro_h */
+
 /** 获取app的名称 **/
 UIKIT_STATIC_INLINE NSString *appName(){
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
 }
+
 /** 获取APP的版本号 */
 UIKIT_STATIC_INLINE NSString *appVersion(){
     return ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]);
 }
-///** 获取app内部的版本号 */
+
+/** 获取系统的版本号 */
+UIKIT_STATIC_INLINE double systemVersion(){
+    NSString *version = [UIDevice currentDevice].systemVersion;
+    return version.doubleValue;
+}
+
+/** 获取app内部的版本号 */
 UIKIT_STATIC_INLINE NSString *appBuildVersion(){
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
 }
 
+/** 获取appBundleId */
 UIKIT_STATIC_INLINE NSString *appBundleIdentifier(){
     return [[NSBundle mainBundle] bundleIdentifier];
 }
@@ -92,9 +124,13 @@ UIKIT_STATIC_INLINE NSString *appBundleIdentifier(){
  */
 UIKIT_STATIC_INLINE void openUrlInSafariWithCompleteBlock(NSString *url,NSDictionary<NSString *,id> *options, void (^completed)(BOOL success)){
     if ([[UIApplication sharedApplication] respondsToSelector:@selector(openURL:options:completionHandler:)]) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:options completionHandler:^(BOOL success) {
-            ExecBlock(completed, success);
-        }];
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:options completionHandler:^(BOOL success) {
+                ExecBlock(completed, success);
+            }];
+        } else {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+        }
     }else{
         BOOL openSuccess = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
         ExecBlock(completed, openSuccess);

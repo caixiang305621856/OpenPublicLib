@@ -27,7 +27,7 @@
     void(^_requestSuccFinishBlock)(id);
     void(^_requestBusinessFailureBlock)(NSDictionary *);
     void(^_requestFailFinishBlock)(NSError *);
-    void(^_requestFinalBlock)();
+    void(^_requestFinalBlock)(void);
     NSMutableDictionary *_httpBodyDic;
     NSMutableDictionary *_parametersDic;
     BOOL                _isResetBlock;//是否进行复位block
@@ -124,7 +124,7 @@
     [self sendRequestSuccFinishBlock:nil requestBusinessFailureBlock:nil requestFailFinishBlock:nil requestFinalBlock:nil];
 }
 
-- (void)sendRequestSuccFinishBlock:(void (^)(id))requestFinishBlock requestFinalBlock:(void (^)())requestFinalBlock showToast:(BOOL)show{
+- (void)sendRequestSuccFinishBlock:(void (^)(id))requestFinishBlock requestFinalBlock:(void (^)(void))requestFinalBlock showToast:(BOOL)show{
     if (show){
         [self sendRequestSuccFinishBlock:requestFinishBlock requestBusinessFailureBlock:[[VPNetConfig defaultConfig] requestBusinessFailureBlock] requestFailFinishBlock:[[VPNetConfig defaultConfig] requestFailFinishBlock] requestFinalBlock:requestFinalBlock];
     }else{
@@ -132,7 +132,7 @@
     }
 }
 
--(void)sendRequestSuccFinishBlock:(void(^)(id result))requestFinishBlock requestBusinessFailureBlock:(void(^)(NSDictionary * response))requestBusinessFailureBlock requestFailFinishBlock:(void(^)(NSError *error))requestFailFinishBlock requestFinalBlock:(void (^)())requestFinalBlock{
+-(void)sendRequestSuccFinishBlock:(void(^)(id result))requestFinishBlock requestBusinessFailureBlock:(void(^)(NSDictionary * response))requestBusinessFailureBlock requestFailFinishBlock:(void(^)(NSError *error))requestFailFinishBlock requestFinalBlock:(void (^)(void))requestFinalBlock{
     _requestFailFinishBlock = requestFailFinishBlock;
     _requestBusinessFailureBlock = requestBusinessFailureBlock;
     _requestSuccFinishBlock = requestFinishBlock;
@@ -173,7 +173,7 @@
     });
 }
 
-- (void)sendRequestWithConstructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))constructingBodyBlock succFinishBlock:(void (^)(id))requestFinishBlock requestBusinessFailureBlock:(void (^)(NSDictionary *))requestBusinessFailureBlock requestFailFinishBlock:(void (^)(NSError *))requestFailFinishBlock requestFinalBlock:(void (^)())requestFinalBlock{
+- (void)sendRequestWithConstructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))constructingBodyBlock succFinishBlock:(void (^)(id))requestFinishBlock requestBusinessFailureBlock:(void (^)(NSDictionary *))requestBusinessFailureBlock requestFailFinishBlock:(void (^)(NSError *))requestFailFinishBlock requestFinalBlock:(void (^)(void))requestFinalBlock{
     _constructingBodyBlock = constructingBodyBlock;
     [self sendRequestSuccFinishBlock:requestFinishBlock requestBusinessFailureBlock:requestBusinessFailureBlock requestFailFinishBlock:requestFailFinishBlock requestFinalBlock:requestFinalBlock];
 }
@@ -261,7 +261,6 @@
     });
 }
 /** @brief 获取数据完毕后的dic
- *  @param isWebFinish 是否是网络请求获取的字典
  *  @param resultDic 网络请求字典结果
  */
 -(void)handlerSuccFinishResponseWithDic:(NSMutableDictionary*)resultDic{
@@ -484,7 +483,7 @@
 /**
  *	@brief	将json数据转换成id
  *
- *	@param data 数据
+ *	@param jsonData 数据
  *
  *	@return	 id类型的数据
  */

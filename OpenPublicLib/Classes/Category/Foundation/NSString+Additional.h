@@ -18,4 +18,5 @@
 - (NSString *)encodeURL;
 
 - (NSString *)decodeURL;
+
 @end

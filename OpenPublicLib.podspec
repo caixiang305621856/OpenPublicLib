@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OpenPublicLib'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = '公共服务基础组件'
 
 # This description is used to generate tags and improve search results.
@@ -29,8 +29,6 @@ TODO: 公用宏，公用函数，公用类的私有组件.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
-
-
 
     s.subspec 'Helper' do |h|
     h.source_files = 'OpenPublicLib/Classes/Helper/**/*'
@@ -64,4 +62,5 @@ TODO: 公用宏，公用函数，公用类的私有组件.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  
 end

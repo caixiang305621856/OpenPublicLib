@@ -85,23 +85,20 @@ typedef NS_ENUM(NSInteger,RequestCacheMode) {
  *  @param requestBusinessFailureBlock 请求完成，业务失败回调
  *  @param requestFailFinishBlock      网络请求失败回调
  *  @param requestFinalBlock           不论何种情况始终会执行此回调，方便统一管理
- *  @param showToastByHelper           是否使用Helper中的通用回调
  */
-- (void)sendRequestSuccFinishBlock:(void(^)(id result))requestFinishBlock requestBusinessFailureBlock:(void(^)(NSDictionary* response))requestBusinessFailureBlock requestFailFinishBlock:(void(^)(NSError *error))requestFailFinishBlock requestFinalBlock:(void(^)())requestFinalBlock;
+- (void)sendRequestSuccFinishBlock:(void(^)(id result))requestFinishBlock requestBusinessFailureBlock:(void(^)(NSDictionary* response))requestBusinessFailureBlock requestFailFinishBlock:(void(^)(NSError *error))requestFailFinishBlock requestFinalBlock:(void(^)(void))requestFinalBlock;
 
 /**
  *  发送网络请求，根据业务需求分别调用不同接口
  *
  *  @param requestFinishBlock          请求完成回调
- *  @param requestBusinessFailureBlock 请求完成，业务失败回调
- *  @param requestFailFinishBlock      网络请求失败回调
  *  @param requestFinalBlock           不论何种情况始终会执行此回调，方便统一管理
- *  @param showToastByHelper           是否使用Helper中的通用回调
+ *  @param show           是否使用提示
  */
-- (void)sendRequestSuccFinishBlock:(void(^)(id result))requestFinishBlock requestFinalBlock:(void(^)())requestFinalBlock showToast:(BOOL)show;
+- (void)sendRequestSuccFinishBlock:(void(^)(id result))requestFinishBlock requestFinalBlock:(void(^)(void))requestFinalBlock showToast:(BOOL)show;
 - (void)sendRequest;
 
-- (void)sendRequestWithConstructingBodyWithBlock:(void(^)(id<AFMultipartFormData> formData))constructingBodyBlock succFinishBlock:(void(^)(id result))requestFinishBlock requestBusinessFailureBlock:(void(^)(NSDictionary* response))requestBusinessFailureBlock requestFailFinishBlock:(void(^)(NSError *error))requestFailFinishBlock requestFinalBlock:(void(^)())requestFinalBlock;
+- (void)sendRequestWithConstructingBodyWithBlock:(void(^)(id<AFMultipartFormData> formData))constructingBodyBlock succFinishBlock:(void(^)(id result))requestFinishBlock requestBusinessFailureBlock:(void(^)(NSDictionary* response))requestBusinessFailureBlock requestFailFinishBlock:(void(^)(NSError *error))requestFailFinishBlock requestFinalBlock:(void(^)(void))requestFinalBlock;
 
 #pragma mark -
 /*
