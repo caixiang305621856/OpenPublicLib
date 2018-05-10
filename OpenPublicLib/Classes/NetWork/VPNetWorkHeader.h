@@ -14,4 +14,5 @@
 #import "VPNetCacheManager.h"
 #import "VPNetConfig.h"
 #import "AFNetworking.h"
+#import "FMDB.h"
 #endif /* VPNetWorkHeader_h */

@@ -32,6 +32,7 @@ TODO: 公用宏，公用函数，公用类的私有组件.
 
     s.subspec 'Helper' do |h|
     h.source_files = 'OpenPublicLib/Classes/Helper/**/*'
+    h.public_header_files = 'OpenPublicLib/Classes/Helper/**/*.h'
     h.dependency 'OpenUDID'
     end
 
@@ -45,6 +46,7 @@ TODO: 公用宏，公用函数，公用类的私有组件.
 
     s.subspec 'UIKitCategory' do |u|
     u.source_files = 'OpenPublicLib/Classes/Category/UIKit/**/*'
+    u.public_header_files = 'OpenPublicLib/Classes/Category/UIKit/**/*.h'
     u.dependency 'SDWebImage', '~> 4.2.3'
     end
 

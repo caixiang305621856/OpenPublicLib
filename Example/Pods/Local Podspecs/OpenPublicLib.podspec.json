@@ -22,6 +22,7 @@
     {
       "name": "Helper",
       "source_files": "OpenPublicLib/Classes/Helper/**/*",
+      "public_header_files": "OpenPublicLib/Classes/Helper/**/*.h",
       "dependencies": {
         "OpenUDID": [
 
@@ -39,6 +40,7 @@
     {
       "name": "UIKitCategory",
       "source_files": "OpenPublicLib/Classes/Category/UIKit/**/*",
+      "public_header_files": "OpenPublicLib/Classes/Category/UIKit/**/*.h",
       "dependencies": {
         "SDWebImage": [
           "~> 4.2.3"
