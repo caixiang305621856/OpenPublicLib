@@ -48,6 +48,7 @@
     {
       "name": "NetWork",
       "source_files": "OpenPublicLib/Classes/NetWork/**/*",
+      "public_header_files": "OpenPublicLib/Classes/NetWork/VPNetWorkHeader.h",
       "dependencies": {
         "AFNetworking": [
           "~> 3.1"

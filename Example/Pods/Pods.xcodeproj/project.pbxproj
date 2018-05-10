@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		002B328215FA9186A68A823FC0235B08 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E445D62B7A9D23DC7461B09400F3DA3 /* AFNetworking.framework */; };
 		00C05031BBA5BA48A00FE41348F41BDA /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 674B6111F10FC42FB4BEB85370E237F0 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0346E45288E4876DA1EFDCA1FB3CBEEF /* VPJSONResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B53EDE6641CE0E9157A1FD64FA0C6F1 /* VPJSONResponseSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		026F87268F661BD391490975C28EB0AF /* VPNetConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 5146C66F36073E5EF1FE5E8F52A147E0 /* VPNetConfig.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		041D45BB8DC83B9BDFDC8EBB5656215A /* VPJSONRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0634D948383AA12D88B233548B357 /* VPJSONRequestSerializer.m */; };
 		053BDEE2AA8F74AAB293EE6699FFB959 /* OpenUDID-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 51AB48C7519FF56FBCB82D3F339E223F /* OpenUDID-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		054B6C181A5446AF9AFF779148A47B31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435C61D32BEBE73A4DB375384CC8FF6F /* Foundation.framework */; };
@@ -33,6 +33,7 @@
 		22554065FA07F1BFE5308A685394CB12 /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FE1016629AADEE4020BA9E96AD367F0 /* FMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2419BA632A06FAADA0B69DDFB9245FE9 /* SDWebImageGIFCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CE25B7E21EBB16A59A20DA6DF1F2EC /* SDWebImageGIFCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26F7D7D21F7A5655C087C341ACA546EF /* SDWebImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FD17E83908E7EA2C861515990588D35 /* SDWebImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26FE6B2E3786665DBDE2D704ABD9D12F /* VPJSONResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B53EDE6641CE0E9157A1FD64FA0C6F1 /* VPJSONResponseSerializer.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		29476636EA86BEFC4CB833D3BB7A52D7 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 810C1F13663FEBE8135AB9A409B7711F /* AFURLRequestSerialization.m */; };
 		2B0705CC26A4CBEE32A5A60284AED35B /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 457EA5A9264C87195B790ECAAFD89B1A /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2F161FD5AB27A49902CA9F6673A971D0 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3A9634830ECDB03D6F76139B2A731F /* UIImage+GIF.m */; };
@@ -65,13 +66,14 @@
 		5A41D80F8045D9EFF6579D84AE1123FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435C61D32BEBE73A4DB375384CC8FF6F /* Foundation.framework */; };
 		5B919560B04596E8986B19F056CB11D9 /* Helper+Validate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6A585FA3C47BC952977F0A6E63EC14 /* Helper+Validate.m */; };
 		5CC8F1CFED4869655D35873115182708 /* SDWebImageCoderHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C05465F9F570C0AD0EC0A4EC616BCD /* SDWebImageCoderHelper.m */; };
+		5E9ECA3C61B8390F4F719C5D2CAF60A3 /* VPNetCacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CB69D1C0FF427087EF704294BE8AD0C3 /* VPNetCacheManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		604A393B0FC95B8A18148D5AFF1B6724 /* VPHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C964FC2CDF3BF26F7A05F92942CFC /* VPHTTPSessionManager.m */; };
 		62A656FFC0B91C911AE434D78311FE55 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 816AC4DB53094E76DA38706495FA1948 /* SDWebImageCompat.m */; };
 		63CE6ADFA7F2B7BA031D3C49A9344383 /* NSImage+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C0C0897219DC4424F809E58DCD334B4 /* NSImage+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		649E78B5EA450FABDF5201E31F265FAB /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78982FBBD3FD5FBD9DCACF168A3621A7 /* AFNetworkActivityIndicatorManager.m */; };
 		6573AF9ABA59AC8D1F52B07088197F71 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C18EE9C700C6CCA4E4BDC693A8C716E /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69E89EE546F9FE5AC9C4E78C9742B8D5 /* VPHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 00F6FDEB2B6B0556A0A8C78E41DCC145 /* VPHTTPSessionManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6C18F4A8D09B0473DE1473D4C249848C /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 206643E000EDF95B3E50000422B4C3BB /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6F5D15F4033458549B50D2B3DD8FDAD2 /* VPNetConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 5146C66F36073E5EF1FE5E8F52A147E0 /* VPNetConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6FDB2F19FF9CF44ABCE94B84237C91F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435C61D32BEBE73A4DB375384CC8FF6F /* Foundation.framework */; };
 		73C0E98007A08A5AD6D1D6D6B4DAB5F0 /* SDWebImagePrefetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D6A41C430FFB2FAF4E697CF7A6BC58 /* SDWebImagePrefetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7584DBBD1FC8BF6DFE5A3D781A47F526 /* SDWebImageCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1306021A4925661D105AE6FED4E59F0D /* SDWebImageCoder.m */; };
@@ -79,7 +81,6 @@
 		7A112C0F21A62CB6F1AA8D917A6EEA6C /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FB32B2E70CA30E9470C706F7653D163 /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A2DBCB83AA6C2CF0601A181ED37BB98 /* UIImage+GIF.h in Headers */ = {isa = PBXBuildFile; fileRef = C3DC03DEE6264193A10221FD2440412A /* UIImage+GIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B30AE5C35F169F2345BB3A5EA4F024C /* Helper+Permission.m in Sources */ = {isa = PBXBuildFile; fileRef = 0753265B861AC9BD09B10B26F7DB1246 /* Helper+Permission.m */; };
-		7B669FDA583B17DA0AC69C44D539EB90 /* VPHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 00F6FDEB2B6B0556A0A8C78E41DCC145 /* VPHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7CE16B1BF75DF396768A0A3CFD968DB1 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A302B537A657699A7D1893C04FA9E /* UIWebView+AFNetworking.m */; };
 		7D9005DF08416FCE64D29FFC5F100EA8 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB1D5B06D24384F8CEB9CD13A3C4F54 /* UIImageView+WebCache.m */; };
 		7F5318C1368B2DED19C003D29CD8D88D /* SDWebImageGIFCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D43254E30FF57DE3CB7CB4630FF4F82 /* SDWebImageGIFCoder.m */; };
@@ -125,27 +126,26 @@
 		AE976B0E8E3DD81E4F49DBEF19D3C0AD /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DFDF159E45160821FE66CB84E86A0B4 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEFCCF0843369D4519A797470149ED28 /* Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = D70CD93A09081C002B04A62701DFA137 /* Helper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AF6D253A357D31058A34C2DA75A794DA /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 939B867FA5E098D2806DFFEFD390517D /* SDWebImagePrefetcher.m */; };
+		B03D743A5E7561D5830259C72E361A45 /* VPBaseRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E2D97D3B05F9921A2B4045988CE0CC /* VPBaseRequest.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B0B201F5779D250499609DE336533DC1 /* UIImageView+ShowLarge.h in Headers */ = {isa = PBXBuildFile; fileRef = C9C0084DB5AF738604E013FE0DBC779F /* UIImageView+ShowLarge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0DAC1A770D9413F3844BBAAF2EB0211 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B2C3D4478DF9C2CBD2327E86F0204 /* Helper.m */; };
 		B16A078FC7FBC172A266A336AEF7F673 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF752D99EEBE582E408ADBF4FBB1F3 /* UIRefreshControl+AFNetworking.m */; };
+		B24D234CB6803DDBE030FE78361FEE3A /* VPJSONRequestSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 87F6F4D22AC5D219B94F9D87F3905158 /* VPJSONRequestSerializer.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B4FFD3916BD4276A10AC82A05BE918B0 /* UIImageView+HighlightedWebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9A699391EC19B73864BF9E9BD35B52 /* UIImageView+HighlightedWebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD1EA35564054F71D33776DD113156B6 /* Helper+Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 207AFACFC32F4C0D1650DF7C2A8EF480 /* Helper+Device.m */; };
 		BEFE039DFCFDDED0F3D70B0AFC8060AA /* UITextField+MaxLength.h in Headers */ = {isa = PBXBuildFile; fileRef = D072E1693D5BB10F15BCF512341754DD /* UITextField+MaxLength.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0BB21519A8A72EBE743E1F138D34272 /* NSArray+Additional.m in Sources */ = {isa = PBXBuildFile; fileRef = 0087CD3EB0F51A1899E5A94D82FF56DF /* NSArray+Additional.m */; };
 		C0D2FC849964FCEE233F86F4AE1741D2 /* VPNetWorkHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CC1A824DA672D9073E7A755CC731421 /* VPNetWorkHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C153A6ACEBD4F82167BD377342F8816F /* SDWebImageImageIOCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 27D2F4181F999AC40B198AF996DAFA0B /* SDWebImageImageIOCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C4666F6A53AA48DF91580F9BC3480C3C /* VPJSONRequestSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 87F6F4D22AC5D219B94F9D87F3905158 /* VPJSONRequestSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4D46598F2987F6B4182A3EAE26C92FA /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1751E73D4BF1EAF0FD43F30D7A809DBC /* SDImageCache.m */; };
 		C605A44DF96E7FCACF7D6E37B62F795D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 97620D1547316CEB9EEC5601F9E3F559 /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		C75EC8CE4F2E93F9FF8D3480B406C092 /* Helper+Permission.h in Headers */ = {isa = PBXBuildFile; fileRef = D96DA129D4F79EF8617D5008B2D33FAD /* Helper+Permission.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C7E06CC9D4F04AE9410778F648BAFA5E /* VPBaseRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E2D97D3B05F9921A2B4045988CE0CC /* VPBaseRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C832C53600EFD5D686173BB9503D5969 /* NSDictionary+Additional.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFDD60153ED6337005A8D3CC2900D6A /* NSDictionary+Additional.m */; };
 		CCB74062CE0F4B8E5B7483599BC398DA /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 778EE39AAF91688535216AF7ACF6F147 /* FMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD59766FC5DD4257BF123DC1917D9C68 /* NSObject+Addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = E8795492E81E430EB569F4386371E0BB /* NSObject+Addtion.m */; };
 		CEB2F0E229EF841D92C780C3FFDF1BEA /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2124F049E686E0BEC57A4222529851C5 /* AFSecurityPolicy.m */; };
 		CF287829627F26B2EB4382B897D06A0E /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEE0E2494E2B1B3C4A4E0D018429DB9 /* AFNetworking-dummy.m */; };
 		D0686E485B2000D7CEBB247DA105B069 /* NSData+ImageContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = CF8DC672BF08AFE1D0A86C75CE29D989 /* NSData+ImageContentType.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D09E5C1C839CD98CF0A12ECBE514AA7F /* VPNetCacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CB69D1C0FF427087EF704294BE8AD0C3 /* VPNetCacheManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2933D86B4ED44090C1C65741377EEA7 /* NSObject+Addtion.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C747654AB6FBB806C04587DB73AFDB4 /* NSObject+Addtion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4396D74778E4CDE8DA8D96591AD59D2 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88CE8AAE896F505D7424227B8347E85 /* ImageIO.framework */; };
 		D45CA1E5CB41B755B8A66AB4E2F3A317 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 25198997B21F305CADA00331D6B9C485 /* SDWebImageDownloader.m */; };
@@ -1111,12 +1111,12 @@
 				43339A9BE3E29383F5550ECF1F248858 /* UIView+Additional.h in Headers */,
 				E37A952FB37338A236175E8493688EEB /* UIView+Empty.h in Headers */,
 				FD834F86CBFC1EF5D6AB23D993BE1EA6 /* UtilsMacro.h in Headers */,
-				C7E06CC9D4F04AE9410778F648BAFA5E /* VPBaseRequest.h in Headers */,
-				7B669FDA583B17DA0AC69C44D539EB90 /* VPHTTPSessionManager.h in Headers */,
-				C4666F6A53AA48DF91580F9BC3480C3C /* VPJSONRequestSerializer.h in Headers */,
-				0346E45288E4876DA1EFDCA1FB3CBEEF /* VPJSONResponseSerializer.h in Headers */,
-				D09E5C1C839CD98CF0A12ECBE514AA7F /* VPNetCacheManager.h in Headers */,
-				6F5D15F4033458549B50D2B3DD8FDAD2 /* VPNetConfig.h in Headers */,
+				B03D743A5E7561D5830259C72E361A45 /* VPBaseRequest.h in Headers */,
+				69E89EE546F9FE5AC9C4E78C9742B8D5 /* VPHTTPSessionManager.h in Headers */,
+				B24D234CB6803DDBE030FE78361FEE3A /* VPJSONRequestSerializer.h in Headers */,
+				26FE6B2E3786665DBDE2D704ABD9D12F /* VPJSONResponseSerializer.h in Headers */,
+				5E9ECA3C61B8390F4F719C5D2CAF60A3 /* VPNetCacheManager.h in Headers */,
+				026F87268F661BD391490975C28EB0AF /* VPNetConfig.h in Headers */,
 				C0D2FC849964FCEE233F86F4AE1741D2 /* VPNetWorkHeader.h in Headers */,
 				8C3832480BE5363BB135BDDA64DCBB33 /* VPPublicUntilitisHelperHeader.h in Headers */,
 			);

@@ -13,4 +13,5 @@
 #import "VPJSONResponseSerializer.h"
 #import "VPNetCacheManager.h"
 #import "VPNetConfig.h"
+#import "AFNetworking.h"
 #endif /* VPNetWorkHeader_h */
