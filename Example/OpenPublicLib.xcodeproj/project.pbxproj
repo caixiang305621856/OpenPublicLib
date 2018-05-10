@@ -208,7 +208,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				BF34E2D98D41AC11E6D9E01D /* [CP] Embed Pods Frameworks */,
-				045CE9261A93F39A7DA51773 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,8 +226,6 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				52DD4C35DBAB5EA6EC9007E1 /* [CP] Embed Pods Frameworks */,
-				008EFDFCE30AE9955223DBF1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -301,51 +298,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		008EFDFCE30AE9955223DBF1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenPublicLib_Tests/Pods-OpenPublicLib_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		045CE9261A93F39A7DA51773 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenPublicLib_Example/Pods-OpenPublicLib_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		52DD4C35DBAB5EA6EC9007E1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenPublicLib_Tests/Pods-OpenPublicLib_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BF34E2D98D41AC11E6D9E01D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
