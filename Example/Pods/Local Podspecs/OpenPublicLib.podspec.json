@@ -31,11 +31,13 @@
     },
     {
       "name": "Macro",
-      "source_files": "OpenPublicLib/Classes/Macro/**/*"
+      "source_files": "OpenPublicLib/Classes/Macro/**/*",
+      "public_header_files": "OpenPublicLib/Classes/Macro/**/*.h"
     },
     {
       "name": "FoundationCategory",
-      "source_files": "OpenPublicLib/Classes/Category/Foundation/**/*"
+      "source_files": "OpenPublicLib/Classes/Category/Foundation/**/*",
+      "public_header_files": "OpenPublicLib/Classes/Category/Foundation/**/*.h"
     },
     {
       "name": "UIKitCategory",

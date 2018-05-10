@@ -38,10 +38,12 @@ TODO: 公用宏，公用函数，公用类的私有组件.
 
     s.subspec 'Macro' do |m|
     m.source_files = 'OpenPublicLib/Classes/Macro/**/*'
+    m.public_header_files = 'OpenPublicLib/Classes/Macro/**/*.h'
     end
 
     s.subspec 'FoundationCategory' do |f|
     f.source_files = 'OpenPublicLib/Classes/Category/Foundation/**/*'
+    f.public_header_files = 'OpenPublicLib/Classes/Category/Foundation/**/*.h'
     end
 
     s.subspec 'UIKitCategory' do |u|
