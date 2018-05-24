@@ -21,10 +21,10 @@ Pod::Spec.new do |s|
 TODO: 公用宏，公用函数，公用类的私有组件.Base
                        DESC
 
-  s.homepage         = 'https://gitee.com/caixiang19901217/OpenPublicLib'
+  s.homepage         = 'https://github.com/caixiang305621856/OpenPublicLib'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '616704162@qq.com' => 'caix@mail.open.cn' }
-  s.source           = { :git => 'https://gitee.com/caixiang19901217/OpenPublicLib.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/caixiang305621856/OpenPublicLib.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
@@ -40,10 +40,10 @@ TODO: 公用宏，公用函数，公用类的私有组件.Base
     end
     
     s.subspec 'Check' do |c|
-        c.source_files = 'OpenPublicLib/Classes/Check/**/*'
-        c.public_header_files = 'OpenPublicLib/Classes/Check/**/*.h'
-        c.dependency 'OpenPublicLib/Base'
-        c.dependency 'OpenPublicLib/Helper'
+    c.source_files = 'OpenPublicLib/Classes/Check/**/*'
+    c.public_header_files = 'OpenPublicLib/Classes/Check/**/*.h'
+    c.dependency 'OpenPublicLib/Base'
+    c.dependency 'OpenPublicLib/Helper'
     end
     
     s.subspec 'Helper' do |h|
