@@ -21,7 +21,7 @@
   "subspecs": [
     {
       "name": "Base",
-      "public_header_files": "OpenPublicLib/Classes/Base/**/*.h",
+      "public_header_files": "OpenPublicLib/Classes/Base/VPPublicUntilitisFetauresHeader.h",
       "source_files": "OpenPublicLib/Classes/Base/**/*",
       "dependencies": {
         "OpenPublicLib/UIKitCategory": [
@@ -47,7 +47,7 @@
     {
       "name": "Helper",
       "source_files": "OpenPublicLib/Classes/Helper/**/*",
-      "public_header_files": "OpenPublicLib/Classes/Helper/**/*.h",
+      "public_header_files": "OpenPublicLib/Classes/Helper/VPPublicUntilitisHelperHeader.h",
       "dependencies": {
         "OpenPublicLib/Macro": [
 
@@ -75,7 +75,7 @@
     {
       "name": "UIKitCategory",
       "source_files": "OpenPublicLib/Classes/Category/UIKit/**/*",
-      "public_header_files": "OpenPublicLib/Classes/Category/UIKit/**/*.h",
+      "public_header_files": "OpenPublicLib/Classes/Category/UIKit/VPUIKitCategoryHeader.h",
       "dependencies": {
         "OpenPublicLib/FoundationCategory": [
 
@@ -104,7 +104,7 @@
     },
     {
       "name": "SVPullToRefresh",
-      "public_header_files": "OpenPublicLib/Classes/SVPullToRefresh/**/*.h",
+      "public_header_files": "OpenPublicLib/Classes/SVPullToRefresh/SVPullToRefresh.h",
       "source_files": "OpenPublicLib/Classes/SVPullToRefresh/**/*",
       "dependencies": {
         "OpenPublicLib/Macro": [
