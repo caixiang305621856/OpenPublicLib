@@ -9,6 +9,11 @@ targetName = options[:target]
 # 本次更新的内容
 msgName = options[:msg]
 
+# git pull
+#  git_pull 
+# 确认是 master 分支
+#  ensure_git_branch
+
 cocoapods(
 clean: true,
 podfile: "./Example/Podfile"
@@ -31,8 +36,8 @@ tag: tagName
 
 push_git_tags
 
-pod_lib_lint(allow_warnings: true,sources: ['https://gitee.com/caixiang19901217/OpenSpecs.git','https://github.com/CocoaPods/Specs.git'],use_libraries:true)
+pod_lib_lint(allow_warnings: true,use_libraries:true,verbose:ture)
 
-pod_push(path: "#{targetName}.podspec", repo: "OpenSpecs", allow_warnings: true,sources: ['https://gitee.com/caixiang19901217/OpenSpecs.git','https://github.com/CocoaPods/Specs.git'],use_libraries:true)
+pod_push(path: "#{targetName}.podspec",allow_warnings: true,use_libraries:true,verbose:ture)
 
 end

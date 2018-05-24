@@ -3,7 +3,7 @@
   "version": "0.1.6",
   "summary": "公共服务基础组件",
   "description": "TODO: 公用宏，公用函数，公用类的私有组件.Base",
-  "homepage": "https://gitee.com/caixiang19901217/OpenPublicLib",
+  "homepage": "https://github.com/caixiang305621856/OpenPublicLib",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "616704162@qq.com": "caix@mail.open.cn"
   },
   "source": {
-    "git": "https://gitee.com/caixiang19901217/OpenPublicLib.git",
+    "git": "https://github.com/caixiang305621856/OpenPublicLib.git",
     "tag": "0.1.6"
   },
   "platforms": {
