@@ -29,8 +29,8 @@ TODO: 公用宏，公用函数，公用类的私有组件.Base
   s.ios.deployment_target = '8.0'
 
     s.subspec 'Base' do |b|
-    b.public_header_files = 'OpenPublicLib/Classes/Base/VPPublicUntilitisFetauresHeader.h'
     b.source_files = 'OpenPublicLib/Classes/Base/**/*'
+    b.public_header_files = 'OpenPublicLib/Classes/Base/**/*.h'
     b.dependency 'OpenPublicLib/UIKitCategory'
     b.dependency 'OpenPublicLib/FoundationCategory'
     b.dependency 'OpenPublicLib/Macro'
@@ -41,7 +41,7 @@ TODO: 公用宏，公用函数，公用类的私有组件.Base
     
     s.subspec 'Helper' do |h|
     h.source_files = 'OpenPublicLib/Classes/Helper/**/*'
-    h.public_header_files = 'OpenPublicLib/Classes/Helper/VPPublicUntilitisHelperHeader.h'
+    h.public_header_files = 'OpenPublicLib/Classes/Helper/**/*.h'
     h.dependency 'OpenPublicLib/Macro'
     h.dependency 'OpenUDID'
     end
@@ -59,7 +59,7 @@ TODO: 公用宏，公用函数，公用类的私有组件.Base
 
     s.subspec 'UIKitCategory' do |u|
     u.source_files = 'OpenPublicLib/Classes/Category/UIKit/**/*'
-    u.public_header_files = 'OpenPublicLib/Classes/Category/UIKit/VPUIKitCategoryHeader.h'
+    u.public_header_files = 'OpenPublicLib/Classes/Category/UIKit/**/*.h'
     u.dependency 'OpenPublicLib/FoundationCategory'
     u.dependency 'OpenPublicLib/SVPullToRefresh'
     u.dependency 'SDWebImage', '~> 4.2.3'
@@ -67,15 +67,15 @@ TODO: 公用宏，公用函数，公用类的私有组件.Base
 
     s.subspec 'NetWork' do |n|
     n.source_files = 'OpenPublicLib/Classes/NetWork/**/*'
-    n.public_header_files = 'OpenPublicLib/Classes/NetWork/VPNetWorkHeader.h'
+    n.public_header_files = 'OpenPublicLib/Classes/NetWork/**/*.h'
     n.dependency 'AFNetworking', '~> 3.1'
     n.dependency 'FMDB'
     n.library = "sqlite3"
     end
 
     s.subspec 'SVPullToRefresh' do |sv|
-    sv.public_header_files = 'OpenPublicLib/Classes/SVPullToRefresh/SVPullToRefresh.h'
     sv.source_files = 'OpenPublicLib/Classes/SVPullToRefresh/**/*'
+    sv.public_header_files = 'OpenPublicLib/Classes/SVPullToRefresh/**/*.h'
     sv.dependency 'OpenPublicLib/Macro'
     sv.dependency 'OpenPublicLib/Helper'
     end
