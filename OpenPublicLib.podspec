@@ -69,8 +69,6 @@ TODO: 公用宏，公用函数，公用类的私有组件.Base
     u.public_header_files = 'OpenPublicLib/Classes/Category/UIKit/**/*.h'
     u.dependency 'OpenPublicLib/FoundationCategory'
     u.dependency 'OpenPublicLib/SVPullToRefresh'
-    u.dependency 'OpenPublicLib/Macro'
-    u.dependency 'OpenPublicLib/Helper'
     u.dependency 'SDWebImage', '~> 4.2.3'
     end
 

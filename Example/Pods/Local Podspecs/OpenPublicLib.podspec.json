@@ -96,12 +96,6 @@
         "OpenPublicLib/SVPullToRefresh": [
 
         ],
-        "OpenPublicLib/Macro": [
-
-        ],
-        "OpenPublicLib/Helper": [
-
-        ],
         "SDWebImage": [
           "~> 4.2.3"
         ]

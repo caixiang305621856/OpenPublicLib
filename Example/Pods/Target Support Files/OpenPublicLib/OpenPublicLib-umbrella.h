@@ -41,7 +41,6 @@
 #import "SVPullToRefresh.h"
 #import "UIScrollView+SVInfiniteScrolling.h"
 #import "UIScrollView+SVPullToRefresh.h"
-#import "BaseViewController+Refresh.h"
 #import "UIImage+Additional.h"
 #import "UIImage+DrawRoundImage.h"
 #import "UIImageView+ShowLarge.h"
