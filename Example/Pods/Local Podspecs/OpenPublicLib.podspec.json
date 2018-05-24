@@ -49,6 +49,9 @@
       "source_files": "OpenPublicLib/Classes/Helper/**/*",
       "public_header_files": "OpenPublicLib/Classes/Helper/**/*.h",
       "dependencies": {
+        "OpenPublicLib/Macro": [
+
+        ],
         "OpenUDID": [
 
         ]
@@ -62,7 +65,12 @@
     {
       "name": "FoundationCategory",
       "source_files": "OpenPublicLib/Classes/Category/Foundation/**/*",
-      "public_header_files": "OpenPublicLib/Classes/Category/Foundation/**/*.h"
+      "public_header_files": "OpenPublicLib/Classes/Category/Foundation/**/*.h",
+      "dependencies": {
+        "OpenPublicLib/Macro": [
+
+        ]
+      }
     },
     {
       "name": "UIKitCategory",

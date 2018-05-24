@@ -34,8 +34,10 @@ PODS:
     - OpenPublicLib/Helper
     - OpenPublicLib/Macro
     - OpenPublicLib/UIKitCategory
-  - OpenPublicLib/FoundationCategory (0.1.6)
+  - OpenPublicLib/FoundationCategory (0.1.6):
+    - OpenPublicLib/Macro
   - OpenPublicLib/Helper (0.1.6):
+    - OpenPublicLib/Macro
     - OpenUDID
   - OpenPublicLib/Macro (0.1.6)
   - OpenPublicLib/NetWork (0.1.6):
@@ -74,7 +76,7 @@ SPEC CHECKSUMS:
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  OpenPublicLib: b4a5dfbc80a290e7700826a94171e66e6f995c00
+  OpenPublicLib: e914d67d7f821e62d966a54f220849f7c319f0ca
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
 

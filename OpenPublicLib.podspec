@@ -42,6 +42,7 @@ TODO: 公用宏，公用函数，公用类的私有组件.Base
     s.subspec 'Helper' do |h|
     h.source_files = 'OpenPublicLib/Classes/Helper/**/*'
     h.public_header_files = 'OpenPublicLib/Classes/Helper/**/*.h'
+    h.dependency 'OpenPublicLib/Macro'
     h.dependency 'OpenUDID'
     end
 
@@ -53,6 +54,7 @@ TODO: 公用宏，公用函数，公用类的私有组件.Base
     s.subspec 'FoundationCategory' do |f|
     f.source_files = 'OpenPublicLib/Classes/Category/Foundation/**/*'
     f.public_header_files = 'OpenPublicLib/Classes/Category/Foundation/**/*.h'
+    f.dependency 'OpenPublicLib/Macro'
     end
 
     s.subspec 'UIKitCategory' do |u|
