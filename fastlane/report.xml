@@ -5,49 +5,49 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: cocoapods" time="2.872499">
+      <testcase classname="fastlane.lanes" name="0: cocoapods" time="3.692985">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: git_add" time="0.04942">
+      <testcase classname="fastlane.lanes" name="1: git_add" time="0.049081">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: git_commit" time="0.036565">
+      <testcase classname="fastlane.lanes" name="2: git_commit" time="0.037521">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: push_to_git_remote" time="5.847277">
+      <testcase classname="fastlane.lanes" name="3: push_to_git_remote" time="7.827514">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: git_tag_exists" time="0.006868">
+      <testcase classname="fastlane.lanes" name="4: git_tag_exists" time="0.007501">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: remove_tag" time="5.702268">
+      <testcase classname="fastlane.lanes" name="5: remove_tag" time="5.73341">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="6: add_git_tag" time="0.014638">
+      <testcase classname="fastlane.lanes" name="6: add_git_tag" time="0.016014">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="7: push_git_tags" time="5.759824">
+      <testcase classname="fastlane.lanes" name="7: push_git_tags" time="5.483579">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="8: pod_lib_lint" time="192.020978">
+      <testcase classname="fastlane.lanes" name="8: pod_lib_lint" time="212.441051">
         
-          <failure message="/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/actions/actions_helper.rb:48:in `execute_action'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/runner.rb:236:in `block in execute_action'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/runner.rb:231:in `chdir'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/runner.rb:231:in `execute_action'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/runner.rb:157:in `trigger_action_by_name'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/fast_file.rb:149:in `method_missing'&#10;Fastfile:39:in `block in parsing_binding'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/lane.rb:33:in `call'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/runner.rb:49:in `block in execute'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/runner.rb:45:in `chdir'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/runner.rb:45:in `execute'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/lane_manager.rb:59:in `cruise_lane'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/command_line_handler.rb:36:in `handle'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/commands_generator.rb:107:in `block (2 levels) in run'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/commander-fastlane-4.4.6/lib/commander/command.rb:178:in `call'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/commander-fastlane-4.4.6/lib/commander/command.rb:153:in `run'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/commander-fastlane-4.4.6/lib/commander/runner.rb:476:in `run_active_command'&#10;/Users/caixiang/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/fastlane-2.95.0/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:75:in `run!'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/commander-fastlane-4.4.6/lib/commander/delegates.rb:15:in `run!'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/commands_generator.rb:332:in `run'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/commands_generator.rb:41:in `start'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/cli_tools_distributor.rb:108:in `take_off'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/bin/fastlane:20:in `&lt;top (required)&gt;'&#10;/Users/caixiang/.rvm/rubies/ruby-2.4.1/bin/fastlane:23:in `load'&#10;/Users/caixiang/.rvm/rubies/ruby-2.4.1/bin/fastlane:23:in `&lt;main&gt;'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1/bin/ruby_executable_hooks:15:in `eval'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1/bin/ruby_executable_hooks:15:in `&lt;main&gt;'&#10;&#10;Exit status of command 'pod lib lint --allow-warnings --use-libraries' was 1 instead of 0.&#10;&#10; -&gt; OpenPublicLib -&gt; OpenPublicLib (0.1.6)&#10;    - ERROR | [iOS] unknown: Encountered an unknown error ([!] /usr/local/bin/git clone https://github.com/matej/MBProgressHUD.git /var/folders/d6/hqttjq1974b_fr12v9gcsyn40000gn/T/d20180524-48856-tjmyl6 --template= --single-branch --depth 1 --branch 1.1.0&#10;&#10;Cloning into '/var/folders/d6/hqttjq1974b_fr12v9gcsyn40000gn/T/d20180524-48856-tjmyl6'...&#10;error: RPC failed; curl 56 SSLRead() return error -9806&#10;fatal: The remote end hung up unexpectedly&#10;fatal: early EOF&#10;fatal: index-pack failed&#10;) during validation.&#10;&#10;[!] OpenPublicLib did not pass validation, due to 1 error.&#10;You can use the `--no-clean` option to inspect any issue.&#10;" />
+          <failure message="/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/actions/actions_helper.rb:48:in `execute_action'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/runner.rb:236:in `block in execute_action'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/runner.rb:231:in `chdir'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/runner.rb:231:in `execute_action'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/runner.rb:157:in `trigger_action_by_name'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/fast_file.rb:149:in `method_missing'&#10;Fastfile:39:in `block in parsing_binding'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/lane.rb:33:in `call'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/runner.rb:49:in `block in execute'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/runner.rb:45:in `chdir'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/runner.rb:45:in `execute'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/lane_manager.rb:59:in `cruise_lane'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/command_line_handler.rb:36:in `handle'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/commands_generator.rb:107:in `block (2 levels) in run'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/commander-fastlane-4.4.6/lib/commander/command.rb:178:in `call'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/commander-fastlane-4.4.6/lib/commander/command.rb:153:in `run'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/commander-fastlane-4.4.6/lib/commander/runner.rb:476:in `run_active_command'&#10;/Users/caixiang/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/fastlane-2.95.0/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:75:in `run!'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/commander-fastlane-4.4.6/lib/commander/delegates.rb:15:in `run!'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/commands_generator.rb:332:in `run'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/commands_generator.rb:41:in `start'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/fastlane/lib/fastlane/cli_tools_distributor.rb:108:in `take_off'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1@global/gems/fastlane-2.95.0/bin/fastlane:20:in `&lt;top (required)&gt;'&#10;/Users/caixiang/.rvm/rubies/ruby-2.4.1/bin/fastlane:23:in `load'&#10;/Users/caixiang/.rvm/rubies/ruby-2.4.1/bin/fastlane:23:in `&lt;main&gt;'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1/bin/ruby_executable_hooks:15:in `eval'&#10;/Users/caixiang/.rvm/gems/ruby-2.4.1/bin/ruby_executable_hooks:15:in `&lt;main&gt;'&#10;&#10;Exit status of command 'pod lib lint --allow-warnings --use-libraries' was 1 instead of 0.&#10;&#10; -&gt; OpenPublicLib -&gt; OpenPublicLib (0.1.6)&#10;    - ERROR | [iOS] unknown: Encountered an unknown error ([!] /usr/local/bin/git clone https://github.com/rs/SDWebImage.git /var/folders/d6/hqttjq1974b_fr12v9gcsyn40000gn/T/d20180524-49586-j9q6wv --template= --single-branch --depth 1 --branch 4.2.3&#10;&#10;Cloning into '/var/folders/d6/hqttjq1974b_fr12v9gcsyn40000gn/T/d20180524-49586-j9q6wv'...&#10;fatal: unable to access 'https://github.com/rs/SDWebImage.git/': SSLRead() return error -9806&#10;) during validation.&#10;&#10;[!] OpenPublicLib did not pass validation, due to 1 error.&#10;You can use the `--no-clean` option to inspect any issue.&#10;" />
         
       </testcase>
     
