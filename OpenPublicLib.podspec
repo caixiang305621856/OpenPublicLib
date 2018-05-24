@@ -70,7 +70,7 @@ TODO: 公用宏，公用函数，公用类的私有组件.Base
     n.public_header_files = 'OpenPublicLib/Classes/NetWork/VPNetWorkHeader.h'
     n.dependency 'AFNetworking', '~> 3.1'
     n.dependency 'FMDB'
-    n.library = "sqlite3"
+    #n.library = "sqlite3"
     end
 
     s.subspec 'SVPullToRefresh' do |sv|
