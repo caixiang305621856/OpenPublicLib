@@ -2,7 +2,7 @@
   "name": "OpenPublicLib",
   "version": "0.1.6",
   "summary": "公共服务基础组件",
-  "description": "TODO: 公用宏，公用函数，公用类的私有组件.",
+  "description": "TODO: 公用宏，公用函数，公用类的私有组件.Base",
   "homepage": "https://gitee.com/caixiang19901217/OpenPublicLib",
   "license": {
     "type": "MIT",
@@ -19,6 +19,31 @@
     "ios": "8.0"
   },
   "subspecs": [
+    {
+      "name": "Base",
+      "public_header_files": "OpenPublicLib/Classes/Base/**/*.h",
+      "source_files": "OpenPublicLib/Classes/Base/**/*",
+      "dependencies": {
+        "OpenPublicLib/UIKitCategory": [
+
+        ],
+        "OpenPublicLib/FoundationCategory": [
+
+        ],
+        "OpenPublicLib/Macro": [
+
+        ],
+        "OpenPublicLib/Helper": [
+
+        ],
+        "MJExtension": [
+
+        ],
+        "MBProgressHUD": [
+
+        ]
+      }
+    },
     {
       "name": "Helper",
       "source_files": "OpenPublicLib/Classes/Helper/**/*",
@@ -44,6 +69,12 @@
       "source_files": "OpenPublicLib/Classes/Category/UIKit/**/*",
       "public_header_files": "OpenPublicLib/Classes/Category/UIKit/**/*.h",
       "dependencies": {
+        "OpenPublicLib/FoundationCategory": [
+
+        ],
+        "OpenPublicLib/SVPullToRefresh": [
+
+        ],
         "SDWebImage": [
           "~> 4.2.3"
         ]
@@ -62,6 +93,19 @@
         ]
       },
       "libraries": "sqlite3"
+    },
+    {
+      "name": "SVPullToRefresh",
+      "public_header_files": "OpenPublicLib/Classes/SVPullToRefresh/**/*.h",
+      "source_files": "OpenPublicLib/Classes/SVPullToRefresh/**/*",
+      "dependencies": {
+        "OpenPublicLib/Macro": [
+
+        ],
+        "OpenPublicLib/Helper": [
+
+        ]
+      }
     }
   ]
 }

@@ -18,18 +18,27 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: 公用宏，公用函数，公用类的私有组件.
+TODO: 公用宏，公用函数，公用类的私有组件.Base
                        DESC
 
   s.homepage         = 'https://gitee.com/caixiang19901217/OpenPublicLib'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '616704162@qq.com' => 'caix@mail.open.cn' }
   s.source           = { :git => 'https://gitee.com/caixiang19901217/OpenPublicLib.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
+    s.subspec 'Base' do |b|
+    b.public_header_files = 'OpenPublicLib/Classes/Base/**/*.h'
+    b.source_files = 'OpenPublicLib/Classes/Base/**/*'
+    b.dependency 'OpenPublicLib/UIKitCategory'
+    b.dependency 'OpenPublicLib/FoundationCategory'
+    b.dependency 'OpenPublicLib/Macro'
+    b.dependency 'OpenPublicLib/Helper'
+    b.dependency 'MJExtension'
+    b.dependency 'MBProgressHUD'
+    end
+    
     s.subspec 'Helper' do |h|
     h.source_files = 'OpenPublicLib/Classes/Helper/**/*'
     h.public_header_files = 'OpenPublicLib/Classes/Helper/**/*.h'
@@ -49,6 +58,8 @@ TODO: 公用宏，公用函数，公用类的私有组件.
     s.subspec 'UIKitCategory' do |u|
     u.source_files = 'OpenPublicLib/Classes/Category/UIKit/**/*'
     u.public_header_files = 'OpenPublicLib/Classes/Category/UIKit/**/*.h'
+    u.dependency 'OpenPublicLib/FoundationCategory'
+    u.dependency 'OpenPublicLib/SVPullToRefresh'
     u.dependency 'SDWebImage', '~> 4.2.3'
     end
 
@@ -60,6 +71,12 @@ TODO: 公用宏，公用函数，公用类的私有组件.
     n.library = "sqlite3"
     end
 
+    s.subspec 'SVPullToRefresh' do |sv|
+    sv.public_header_files = 'OpenPublicLib/Classes/SVPullToRefresh/**/*.h'
+    sv.source_files = 'OpenPublicLib/Classes/SVPullToRefresh/**/*'
+    sv.dependency 'OpenPublicLib/Macro'
+    sv.dependency 'OpenPublicLib/Helper'
+    end
   # s.resource_bundles = {
   #   'OpenPublicLib' => ['OpenPublicLib/Assets/*.png']
   # }
