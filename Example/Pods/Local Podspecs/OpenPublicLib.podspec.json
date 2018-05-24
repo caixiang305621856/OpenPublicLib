@@ -49,6 +49,9 @@
       "source_files": "OpenPublicLib/Classes/Check/**/*",
       "public_header_files": "OpenPublicLib/Classes/Check/**/*.h",
       "dependencies": {
+        "OpenPublicLib/Base": [
+
+        ],
         "OpenPublicLib/Helper": [
 
         ]
@@ -91,6 +94,12 @@
 
         ],
         "OpenPublicLib/SVPullToRefresh": [
+
+        ],
+        "OpenPublicLib/Macro": [
+
+        ],
+        "OpenPublicLib/Helper": [
 
         ],
         "SDWebImage": [

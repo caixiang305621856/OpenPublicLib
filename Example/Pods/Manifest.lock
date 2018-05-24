@@ -36,6 +36,7 @@ PODS:
     - OpenPublicLib/Macro
     - OpenPublicLib/UIKitCategory
   - OpenPublicLib/Check (0.1.6):
+    - OpenPublicLib/Base
     - OpenPublicLib/Helper
   - OpenPublicLib/FoundationCategory (0.1.6):
     - OpenPublicLib/Macro
@@ -51,6 +52,8 @@ PODS:
     - OpenPublicLib/Macro
   - OpenPublicLib/UIKitCategory (0.1.6):
     - OpenPublicLib/FoundationCategory
+    - OpenPublicLib/Helper
+    - OpenPublicLib/Macro
     - OpenPublicLib/SVPullToRefresh
     - SDWebImage (~> 4.2.3)
   - OpenUDID (1.0.0)
@@ -79,7 +82,7 @@ SPEC CHECKSUMS:
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  OpenPublicLib: f8df5210ecfe212f58d5c4c13e70c9858256772e
+  OpenPublicLib: 05749b7af41dc12addee523cb690a48af8d0b90d
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
 
