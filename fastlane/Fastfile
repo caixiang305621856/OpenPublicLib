@@ -31,8 +31,8 @@ tag: tagName
 
 push_git_tags
 
-pod_lib_lint(allow_warnings: true,sources: ['https://gitee.com/caixiang19901217/OpenSpecs.git','https://github.com/CocoaPods/Specs.git'])
+pod_lib_lint(allow_warnings: true,sources: ['https://gitee.com/caixiang19901217/OpenSpecs.git','https://github.com/CocoaPods/Specs.git'],use_libraries:true)
 
-pod_push(path: "#{targetName}.podspec", repo: "OpenSpecs", allow_warnings: true,sources: ['https://gitee.com/caixiang19901217/OpenSpecs.git','https://github.com/CocoaPods/Specs.git'])
+pod_push(path: "#{targetName}.podspec", repo: "OpenSpecs", allow_warnings: true,sources: ['https://gitee.com/caixiang19901217/OpenSpecs.git','https://github.com/CocoaPods/Specs.git'],use_libraries:true)
 
 end

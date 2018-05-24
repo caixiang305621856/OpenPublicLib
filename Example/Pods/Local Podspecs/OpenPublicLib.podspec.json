@@ -99,7 +99,8 @@
         "FMDB": [
 
         ]
-      }
+      },
+      "libraries": "sqlite3"
     },
     {
       "name": "SVPullToRefresh",
