@@ -12,6 +12,7 @@
 
 #import "BaseCell.h"
 #import "BaseNavigationController.h"
+#import "BaseViewController+Refresh.h"
 #import "BaseViewController.h"
 #import "BaseModel.h"
 #import "BaseView.h"
