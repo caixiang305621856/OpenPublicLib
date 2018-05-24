@@ -39,6 +39,12 @@ TODO: 公用宏，公用函数，公用类的私有组件.Base
     b.dependency 'MBProgressHUD'
     end
     
+    s.subspec 'Check' do |c|
+        c.source_files = 'OpenPublicLib/Classes/Check/**/*'
+        c.public_header_files = 'OpenPublicLib/Classes/Check/**/*.h'
+        c.dependency 'OpenPublicLib/Helper'
+    end
+    
     s.subspec 'Helper' do |h|
     h.source_files = 'OpenPublicLib/Classes/Helper/**/*'
     h.public_header_files = 'OpenPublicLib/Classes/Helper/**/*.h'

@@ -45,6 +45,16 @@
       }
     },
     {
+      "name": "Check",
+      "source_files": "OpenPublicLib/Classes/Check/**/*",
+      "public_header_files": "OpenPublicLib/Classes/Check/**/*.h",
+      "dependencies": {
+        "OpenPublicLib/Helper": [
+
+        ]
+      }
+    },
+    {
       "name": "Helper",
       "source_files": "OpenPublicLib/Classes/Helper/**/*",
       "public_header_files": "OpenPublicLib/Classes/Helper/**/*.h",
