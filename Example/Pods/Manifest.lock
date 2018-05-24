@@ -19,38 +19,38 @@ PODS:
   - FMDB/standard (2.7.2)
   - MBProgressHUD (1.1.0)
   - MJExtension (3.0.13)
-  - OpenPublicLib (0.1.6):
-    - OpenPublicLib/Base (= 0.1.6)
-    - OpenPublicLib/Check (= 0.1.6)
-    - OpenPublicLib/FoundationCategory (= 0.1.6)
-    - OpenPublicLib/Helper (= 0.1.6)
-    - OpenPublicLib/Macro (= 0.1.6)
-    - OpenPublicLib/NetWork (= 0.1.6)
-    - OpenPublicLib/SVPullToRefresh (= 0.1.6)
-    - OpenPublicLib/UIKitCategory (= 0.1.6)
-  - OpenPublicLib/Base (0.1.6):
+  - OpenPublicLib (0.1.7):
+    - OpenPublicLib/Base (= 0.1.7)
+    - OpenPublicLib/Check (= 0.1.7)
+    - OpenPublicLib/FoundationCategory (= 0.1.7)
+    - OpenPublicLib/Helper (= 0.1.7)
+    - OpenPublicLib/Macro (= 0.1.7)
+    - OpenPublicLib/NetWork (= 0.1.7)
+    - OpenPublicLib/SVPullToRefresh (= 0.1.7)
+    - OpenPublicLib/UIKitCategory (= 0.1.7)
+  - OpenPublicLib/Base (0.1.7):
     - MBProgressHUD
     - MJExtension
     - OpenPublicLib/FoundationCategory
     - OpenPublicLib/Helper
     - OpenPublicLib/Macro
     - OpenPublicLib/UIKitCategory
-  - OpenPublicLib/Check (0.1.6):
+  - OpenPublicLib/Check (0.1.7):
     - OpenPublicLib/Base
     - OpenPublicLib/Helper
-  - OpenPublicLib/FoundationCategory (0.1.6):
+  - OpenPublicLib/FoundationCategory (0.1.7):
     - OpenPublicLib/Macro
-  - OpenPublicLib/Helper (0.1.6):
+  - OpenPublicLib/Helper (0.1.7):
     - OpenPublicLib/Macro
     - OpenUDID
-  - OpenPublicLib/Macro (0.1.6)
-  - OpenPublicLib/NetWork (0.1.6):
+  - OpenPublicLib/Macro (0.1.7)
+  - OpenPublicLib/NetWork (0.1.7):
     - AFNetworking (~> 3.1)
     - FMDB
-  - OpenPublicLib/SVPullToRefresh (0.1.6):
+  - OpenPublicLib/SVPullToRefresh (0.1.7):
     - OpenPublicLib/Helper
     - OpenPublicLib/Macro
-  - OpenPublicLib/UIKitCategory (0.1.6):
+  - OpenPublicLib/UIKitCategory (0.1.7):
     - OpenPublicLib/FoundationCategory
     - OpenPublicLib/SVPullToRefresh
     - SDWebImage (~> 4.2.3)
@@ -80,7 +80,7 @@ SPEC CHECKSUMS:
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  OpenPublicLib: 01b3700bead6fd205c1c7b25b2d5da5e441e341d
+  OpenPublicLib: 29a49e50cdcf3ac2c64edf634e36e90349d73e9f
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
 
